@@ -6,7 +6,7 @@ EOPCCV contains 30 synthetic mixed-variable benchmark problems: EOPCCV-F1~EOPCCV
 2) Type 2 (EOPCCV-F11~EOPCCV-F20): 5 continuous + 5 categorical variables
 3) Type 3 (EOPCCV-F21~EOPCCV-F30): 2 continuous + 8 categorical variables
 
-MiSACO and EOPCCV are implemented in Matlab based on PlatEMO 4.13 (https://github.com/BIMK/PlatEMO).
+MiSACO and EOPCCV are implemented in Matlab based on PlatEMO 4.X (https://github.com/BIMK/PlatEMO).
 
 @ARTICLE{9464165,
   author={Liu, Jiao and Wang, Yong and Sun, Guangyong and Pang, Tong},
