@@ -8,7 +8,7 @@ xmax = para.xmax;
 ymin = para.ymin;
 ymax = para.ymax;
 % normalization
-x = 2./(repmat(xmax - xmin, nx, 1)) .* (x - repmat(xmin, nx, 1)) - 1;
+x = 2./(repmat(xmax - xmin + eps, nx, 1)) .* (x - repmat(xmin, nx, 1) + eps) - 1;
 
 % r = sqrt(abs(repmat(diag(ax * ax')', nx, 1) + repmat(diag(x * x'), 1, np) - 2 * (x * ax')));
 r = dist(x, ax');
@@ -22,7 +22,7 @@ end
 
 y = Phi * para.alpha + [ones(nx, 1), x] * para.beta;
 % renormalization
-y = repmat(ymax - ymin, nx, 1)./2 .* (y + 1) + repmat(ymin, nx, 1);
+y = repmat(ymax - ymin + eps, nx, 1)./2 .* (y + 1) + repmat(ymin - eps, nx, 1);
 
 % switch para.kernel
 %     case 'gaussian'

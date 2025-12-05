@@ -62,6 +62,9 @@ classdef MiSACO < ALGORITHM
                 
                 %% Surrogate-Assisted Local Search
                 [~,id_best] = min(DB.objs);
+                if length(id_best) > 1
+                    id_best = id_best(1,:);
+                end
                 best_x      = DB(id_best).decs;
                 best_r      = best_x(:,1:Problem.Dr);
                 best_c      = ceil(best_x(:,Problem.Dr+1:Problem.D));

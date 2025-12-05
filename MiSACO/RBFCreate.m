@@ -5,8 +5,8 @@ xmin = min(ax, [], 1);
 xmax = max(ax, [], 1);
 ymin = min(ay, [], 1);
 ymax = max(ay, [], 1);
-ax = 2./(repmat(xmax - xmin, N, 1)) .* (ax - repmat(xmin, N, 1)) - 1;
-ay = 2./(repmat(ymax - ymin, N, 1)) .* (ay - repmat(ymin, N, 1)) - 1;
+ax = 2./(repmat(xmax - xmin + eps, N, 1)) .* (ax - repmat(xmin, N, 1) + eps) - 1;
+ay = 2./(repmat(ymax - ymin + eps, N, 1)) .* (ay - repmat(ymin, N, 1) + eps) - 1;
 
 % xxh = ax * ax';
 % r = sqrt(repmat(diag(xxh)', N, 1) + repmat(diag(xxh), 1, N) - 2 * xxh);
