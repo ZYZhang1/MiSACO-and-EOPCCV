@@ -45,7 +45,7 @@ classdef EOPCCV_F20 < PROBLEM
             end
             z = 6*(z - Shift(1,:))*M;
             for i = 1 : obj.D
-                z_(i) = z(i)/sqrt(i);
+                z_(i) = cos(z(i)/sqrt(i));
             end
             PopObj = 1 + sum(z.^2,2)./4000 - prod(z_);   
         end
